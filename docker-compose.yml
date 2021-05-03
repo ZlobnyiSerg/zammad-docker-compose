@@ -52,6 +52,8 @@ services:
     restart: ${RESTART}
     volumes:
       - postgresql-data:/var/lib/postgresql/data
+      - zammad-data:/opt/zammad
+      - zammad-backup:/var/tmp/zammad:ro
 
   zammad-railsserver:
     command: ["zammad-railsserver"]
